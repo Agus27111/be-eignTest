@@ -35,7 +35,7 @@ const MemberController = {
       const member = await Member.create({ code, name });
 
       res.status(201).json({
-        status: "success",
+        status: "User registered",
         data: { member },
       });
     } catch (error: any) {
@@ -79,7 +79,7 @@ const MemberController = {
       });
 
       return res.status(200).json({
-        status: "success",
+        status: "Successful login",
         token: token,
         refreshToken: refreshToken,
       });
@@ -106,7 +106,7 @@ const MemberController = {
       }
 
       return res.status(200).json({
-        status: "success",
+        status: "User details fetched",
         member: member,
       });
     } catch (error: any) {
@@ -137,7 +137,7 @@ const MemberController = {
     try {
       const allMember = await Member.findAll();
       return res.status(200).json({
-        status: "success",
+        status: "Users fetched",
         data: allMember,
       });
     } catch (error: any) {

@@ -1,4 +1,11 @@
-/node_modules
-/build
-/.vs
-/catatan.MD
+# Node.js dependencies
+node_modules/
+
+# Build output
+build/
+
+# Visual Studio files
+.vs/
+
+# Notes
+catatan.MD

@@ -1,0 +1,11 @@
+{
+  "name": "algoritma",
+  "version": "1.0.0",
+  "main": "one.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "agus setiawan",
+  "license": "ISC",
+  "description": ""
+}

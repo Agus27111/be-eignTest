@@ -1,0 +1,35 @@
+import express, { Request, Response } from "express";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import dotenv from "dotenv";
+
+import router from "./routes/Routes";
+
+
+dotenv.config();
+
+const app = express();
+app.use(express.json());
+app.use(cookieParser());
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+  })
+);
+
+// Rute public
+app.get("/", (req: Request, res: Response) => {
+  return res.status(200).send({
+    response: "Express TypeScript",
+  });
+});
+
+// Middleware autentikasi diaplikasikan sebelum rute yang memerlukan autentikasi
+app.use("/api/v1", router); // Pastikan middleware diterapkan di sini
+
+app.listen(process.env.APP_PORT, () => {
+  console.log(
+    `${process.env.APP_NAME} running on port ${process.env.APP_PORT}`
+  );
+});
